@@ -1,0 +1,636 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 1.2vw;
+}
+
+body{
+    background: #299F7E;
+}
+
+/* ------------------ NAVIGATION BAR ------------------ */
+
+nav{
+    position: fixed;
+    display: block;
+    width: 100%;
+    height: 10.40%;
+    background: #f2eeeb; /* f2eeeb */
+    font-size: 0;
+    box-shadow: 0 2px 3px 0 rgba(0,0,0,.1);
+    margin-bottom: 3%;
+}
+
+nav a, #userFullname{
+    color: #062102;
+    text-decoration: none;
+    position: relative;
+    z-index: 1;
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle; 
+    padding: 1.6% 0 1.7% 0;
+    margin: -0.8% 0 -0.8% 0;
+    
+}
+
+.dropbtn{
+    color: #062102;
+}
+.active{
+    background-color: #299F7E; /* #2e8806 */
+    color: white;
+}
+
+.nav-pages{
+    font-weight: bold;
+}
+
+a:not(.active){
+    background-image: linear-gradient(to right,#299F7E,#299F7E 50%,#000 50%);
+    background-size: 200% 100%;
+    background-position: -100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: all 0.3s ease-in-out;
+}
+
+a:before {
+    content: '';
+    background: white;
+    display: block;
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 0;
+    height: 3px;
+    transition: all 0.3s ease-in-out;
+}
+
+#nav1:before{
+    content: '';
+    background: white;
+    display: block;
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 0;
+    height: 3px;
+    transition: all 0.4s ease-in-out;
+}
+
+a:hover:not(.active) {
+    background-position: 0;
+}
+
+a:hover:not(.active)::before {
+    width: 100%;
+}
+
+#userFullname{
+    text-align:left;
+    width: 49%;
+    margin-left: 1%;
+    margin-top: 0.05%;
+    margin-bottom: 0.05%;
+  }
+
+nav a:nth-child(5){
+    width: 10%;
+  }
+  
+  nav a:nth-child(2), nav a:nth-child(3), nav a:nth-child(4), nav a:nth-child(6), nav a:nth-child(7){
+    width: 7.5%;
+  }
+
+/* ------------------ Tabs ------------------ */
+
+.container{
+    padding-top: 8%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+.tabs{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    background: #f2eeeb;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.05);
+    margin-bottom: 3%;
+    border-radius: 16px;
+}
+
+.tabs-head{
+    display: flex;
+    align-items: stretch;
+}
+
+.tabs-toggle{
+    display: flex;
+    width: 50%;
+    padding: 2%;
+    align-items: center;
+    justify-content: center;
+    background: #f2eeeb;
+    cursor: pointer;
+    font-size: 1.8vw;
+    font-weight: bold;
+    color: #062102;
+}
+
+#tab1{
+    border-top-left-radius: 16px;
+}
+
+#tab2{
+    border-top-right-radius: 16px;
+}
+
+.tabs-toggle.is-active{
+    background: #f2eeeb;
+}
+
+.tabs-content{
+    padding: 2%;
+    display: none;
+}
+
+.tabs-content.is-active{
+    display: block;
+}
+
+.tabs-text{
+    color: #062102;
+}
+
+/* ------------------ Tabs-Content ------------------ */
+.Two-Info div, .Three-Info div, .Four-Info div{
+    display: inline-block;
+}
+
+.FirstName, .MiddleName, .LastName, .Extension{
+    width: 22.35%;
+    padding: 0 1% 0 1%;
+}
+
+.Complaints, .Diagnosis, .DiagnosticTestNeeded, .MedicineGiven, .PhysicalFindings, .Remarks{
+    width: 65%;
+    padding: 0 1% 0 3%;
+}
+
+.Physician, .Date, .IDNumForm, .PhysicianIDNumber, .Age, .Sex{
+    width: 47%;
+    padding: 0 1% 0 1%;
+}
+
+.CourseStrand{
+    width: 60%;
+    padding: 0 1% 0 1%;
+}
+
+.Year{
+    width: 34%;
+    padding: 0 1% 0 1%; 
+}
+
+
+.Temperature, .BP, .PR{
+    width: 30.5%;
+    padding: 0 1% 0 1%;
+}
+
+#space1{
+    padding-left: 2%;
+}
+
+legend{
+    font-weight: bold;
+    padding: 0 1% 0 1%;
+    margin-bottom: 2%;
+}
+
+textarea{
+    box-sizing: border-box;
+    width: 145%;
+    height: 70px;
+}
+
+#TxtDiagnosis, #TxtMedicineGiven, #TxtPhysicalFindings{
+    height: 35px;
+}
+
+#TxtComplaints, #TxtDiagnosis, #TxtMedicineGiven, #TxtDiagnosticTestNeeded, #TxtDiagnosticTest, #TxtPhysicalFindings, #TxtRemarks{
+    margin-top: 2%;
+    margin-bottom: 2%;
+    background-color: #F2F2F2;
+}
+
+
+.form-button:hover {
+    background: #299F7E;
+    color: #F2F3EB;
+  }
+
+button, input{
+    color: #5A5A5A;
+    margin: 0;
+}
+
+td input[type='number'], td input[type='text']{
+    margin: 0;
+    padding: 0.5em 0.5em 0.3em 0.5em;
+}
+
+input {
+    line-height: normal;
+}
+
+input[type='text'], input[type='number'], input[type='date'], #TxtBooster{
+    background: none;
+    border: none;
+    border-bottom: solid 2px black;
+    border-top: solid 1px gray;
+    border-right: solid 1px gray;
+    border-left: solid 1px gray;
+    color: #062102;
+    font-weight: 400;
+    letter-spacing: 1px;
+    margin: 0em 0 1.875em 0;
+    padding: 0.5em 0.5em 0.3em 0.5em;
+    text-transform: uppercase;
+    width: 100%;
+    box-sizing: border-box;
+    transition: all 0.3s;
+}
+
+.form-button{
+    overflow: visible;
+    text-transform: none;
+    border: solid 2px #062102;
+    cursor: pointer;
+    font-weight: bold;
+    outline: none;
+    padding: 20px 35px;
+    transition: all 0.3s;
+    background: none;
+    color: #062102;
+    text-align: center;
+    border-radius: 360px;
+    
+}
+
+.submit{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 2% 0 2% 0;
+}
+  
+button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.button__svg {
+    margin-left: 8px;
+    height: 24px;
+    width: 24px;
+  }
+
+  #twoButton, #exportButton{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#twoButton{
+    margin-top: -3%;
+}
+
+#BtnAdd, #BtnSave, #BtnEdit, #BtnClear, #BtnPrint, #BtnPDF{
+    margin-left: .5vw;
+    margin-right: .5vw;
+}
+
+#BtnPrint, #BtnPDF{
+    width: 100%;
+    height: 75%;
+}
+
+/* .jconfirm-scrollpane{
+    background-color: rgb(41, 159, 126);
+} */
+
+#wholetab{
+    display: none;
+}
+
+  button:disabled, button:disabled:hover{
+    background-color: gray;
+    color: rgba(255,255,255,.5);
+    border: solid 2px gray;
+    cursor: default;
+}
+
+.NumOfStick, .NumOfYear, .AgeStarted, .Others, .MomaYes, .Booster{
+    width: 32.2%;
+    padding: 0 1% 0 1%;
+}
+
+.Smoker, .Sanger, .Moma, .VS{
+    width: 25%;
+    padding-right: 1%;
+    padding-left: 3%;
+}
+
+#TxtBooster, #TxtVaccineBrand{
+    background: white;
+    border: none;
+    border-bottom: solid 2px black;
+    border-top: solid 1px gray;
+    border-right: solid 1px gray;
+    border-left: solid 1px gray;
+    color: #062102;
+    font-weight: 400;
+    letter-spacing: 1px;
+    margin: 0em 0 1.875em 0;
+    padding: 0.5em 0.5em 0.3em 0.5em;
+    text-transform: uppercase;
+    width: 100%;
+    box-sizing: border-box;
+    transition: all 0.3s;
+}
+
+.VaccineBrand{
+    margin-left: 0.3%;
+    width: 32%;
+}
+
+.Booster{
+    margin-left: 1.20%;
+}
+
+
+#req{
+    color: red;
+}
+
+#MedicalStaffInfo{
+    padding-left: 3%;
+    padding-bottom: 2%;
+    font-weight: bold;
+    width: 45%;
+}
+
+#ExaminedBy{
+    font-weight: bold;
+    margin-left: 25%;
+}
+
+#MedicalStaffInfo legend{
+    padding-top: 3%;
+    padding-bottom: 0.5%;
+    margin-left: -6%;
+}
+
+form{
+    page-break-inside:auto; 
+}
+
+form .One-Info, form .Two-Info, form .Three-Info, form .Four-Info{
+    page-break-inside:avoid; 
+    page-break-after:auto; 
+}
+
+.DiagnosticTestNeeded {
+    page-break-after:auto;
+}
+
+/* ------------------------------------- Changes Start Here ---------------------------------- */
+#tableMedicalInfo{
+    width: 75%;
+    margin: 0 12.5% 0 12.5%;
+}
+
+#tablePersonalInfo{
+    width: 96.5%;
+}
+
+#tablePersonalInfo input{
+    margin: 0;
+    padding: 0.25em;
+}
+
+.DocumentCode{
+    width: 25%;
+}
+
+.RevisionNumber{
+    width: 25%;
+}
+
+#ConsultationHeader{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 2%;
+    justify-content: center;
+    padding-top: 2%;
+}
+
+#PhysicalExaminationHeader{
+    display: flex;
+    flex-direction: row;
+    height: 11vh;
+    width: 40vw;
+    padding: 0 1% 0 1%;
+}
+
+#PhysicalExaminationHeader h3{
+     padding-top: 4.5vh;
+    padding-bottom: 6.5vh; 
+    padding-left: 3%;
+}
+
+#ISO{
+    width: 60vw;
+    padding: 0 1% 0 1%;
+}
+
+nav{
+    position: fixed;
+    display: block;
+    width: 100%;
+    height: 9.25%;    
+    background: #f2eeeb;
+    font-size: 0;
+    box-shadow: 0 2px 3px 0 rgba(0,0,0,.1);
+    margin-bottom: 3%;
+}
+
+nav a, #userFullname, nav div{
+    color: #062102;
+    text-decoration: none;
+    position: relative;
+    z-index: 1;
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle; 
+    padding: 1.6% 0 1.7% 0;
+    margin: -0.8% 0 -0.8% 0;
+}
+
+#userFullname{
+    text-align:left;
+    width: 44%;
+    margin-left: 1%;
+    margin-top: 0.05%;
+    margin-bottom: 0.05%;
+  }
+
+  #nav5, #nav6{
+    width: 10%;
+  }
+
+  #nav2, #nav3, #nav4, #nav7, #nav8{
+    width: 7%;
+  }
+
+  #TAHearingDistance, #TASpeech, #TAEyes, #TAEars, #TANose, #TAHead, #TAAbdomen, #TAGenitoUrinary, #TALymphGlands, #TASkin, #TAExtremities, #TADeformities, #TACavityAndThroat, #TALungs, #TAHeart, #TABreast, #TARadiologicExams, #TABloodAnalysis, #TAUrinalysis, #TAFecalysis, #TAPregnancyTest, #TAHBSAg{
+    width: 100%;
+    height: 5vh;
+    overflow: hidden;
+    resize: none;
+    display: none;
+}
+
+#TxtOthers{
+    height: 10vh;
+    width: 100%;
+    overflow: hidden;
+    resize: none;
+}
+
+#TxtRecommendation{
+    height: 10vh;
+    overflow: hidden;
+    resize: none;
+}
+
+#TxtHearingDistanceOption, #TxtSpeechOption, #TxtEyesOption, #TxtEarsOption, #TxtNoseOption, #TxtHeadOption, #TxtAbdomenOption, #TxtGenitoUrinaryOption, #TxtLymphGlandsOption, #TxtSkinOption, #TxtExtremitiesOption, #TxtDeformitiesOption, #TxtCavityAndThroatOption, #TxtLungsOption, #TxtHeartOption, #TxtBreastOption, #TxtRadiologicExamsOption, #TxtBloodAnalysisOption, #TxtUrinalysisOption, #TxtFecalysisOption, #TxtPregnancyTestOption, #TxtHBSAgOption{
+    height: 5vh;
+    margin: 0;
+}
+
+  /* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    display: inline-block;
+    margin:  0;
+    /* background-color: #299F7E; */
+  }
+  
+  /* Dropdown Button */
+  .dropbtn {
+    font-weight: bold;
+    border: none;
+   /*  background-color: #299F7E; */
+    color: #062102;
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle; 
+  }
+  
+  /* Dropdown Content (Hidden by Default) */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    width: 10vw;
+    margin-top: 15%;
+  }
+  
+  /* Links inside the dropdown */
+  .dropdown-content a {
+    text-decoration: none;
+    display: block;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  
+  .dropA{
+    padding: 0 6.25vw 0 1vw;
+  }
+
+  .dropdown-content a:nth-child(2), .dropdown-content a:nth-child(3), .dropdown-content a:nth-child(4), .dropdown-content a:nth-child(5), .dropdown-content a:nth-child(6), .dropdown-content a:nth-child(7){
+    padding: 0 8.10vw 0 1vw;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  
+  /* Change color of dropdown links on hover */
+  .dropdown-content a:hover {background-color: #ddd;}
+  
+  /* Show the dropdown menu on hover */
+  .dropdown:hover .dropdown-content {display: block;}
+  
+  /* Change the background color of the dropdown button when the dropdown content is shown 
+  .dropdown:hover .dropbtn {background-color: black;}*/
+
+  #tablePersonalInfo{
+    width: 96.5%;
+}
+
+#tablePersonalInfo input{
+    margin: 0;
+    padding: 0.25em;
+}
+
+.DocumentCode{
+    width: 25%;
+}
+
+.RevisionNumber{
+    width: 25%;
+}
+
+#topHeader{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 2%;
+}
+
+#PhysicalExaminationHeader{
+    display: flex;
+    flex-direction: row;
+    height: 11vh;
+    width: 40vw;
+    padding: 0 1% 0 1%;
+}
+
+#ConsultationHeader h3{
+    padding-top: 2%;
+    padding-left: 3%;
+    font-size: 2vw;
+}
+
+#ISO{
+    width: 60vw;
+    padding: 0 1% 0 1%;
+}
+
+#bsuLogo{
+    width: 6vw;
+    height: 6vw;
+  }
+
+  .tabs-head{
+    display: none;
+  }

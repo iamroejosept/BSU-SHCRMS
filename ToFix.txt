@@ -1,0 +1,2 @@
+To fix:
+1. Archive function: The system notify that the archive failed but still it removed the record.
