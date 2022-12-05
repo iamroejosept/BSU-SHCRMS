@@ -932,7 +932,7 @@ require '../../php/centralConnection.php';
                              <br>
                             <div class="Two-Info">
                                     <div class="ContactNumber">
-                                        <label for="TxtContactNumber">Contact Number</label> 
+                                        <label for="TxtContactNumber">Contact Number</label> <span id="req">*</span>
                                         <input type="text" name="TxtContactNumber" id="TxtContactNumber" onkeypress="return isNumberKey(this,event)" required minlength="13" maxlength="13" readonly>
                                     </div>
                             
