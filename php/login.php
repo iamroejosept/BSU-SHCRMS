@@ -137,7 +137,7 @@
                 //used to skip enter email for staff account to verify code immediately
                 if ($_SESSION['isStandard']) {
                   $_SESSION['email'] = stripslashes($Row['Email']);
-                  $info = "We've sent a password reset otp to your email. Contact admin for verification code if your email didn't received a code.";
+                  $info = "We've sent a password reset code to the admin. Please contact the admin for the code";
                   $_SESSION['info'] = $info;
 
                   //will only permit one code at a time
