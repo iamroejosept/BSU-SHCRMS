@@ -1361,6 +1361,7 @@ require '../../../php/centralConnection.php';
             document.getElementById('MedicalStaffInfo').style.display = 'inline-block';
             document.getElementById('ExaminedBy').style.display = 'inline-block';
             document.getElementById('BtnAdd').style.display = 'none';
+            document.getElementById('BtnClear').style.display = 'none';
             getType = 'viewCons';
             passIDPHP($num);
             </script>";
