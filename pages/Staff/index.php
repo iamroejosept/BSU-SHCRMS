@@ -446,7 +446,7 @@ require '../../php/centralConnection.php';
                 document.getElementById('BtnPrint').style.display = "flex";     
                 document.getElementById('BtnEdit').style.display = "flex";    
                 document.getElementById('BtnAdd').style.display = "none";     
-                document.getElementById('BtnClear').style.display = "flex"; 
+                document.getElementById('BClear').style.display = 'none';
 
                 var form_data = new FormData();
                 var Num = document.getElementById('TxtStaffIDNumber').value;
@@ -980,7 +980,7 @@ require '../../php/centralConnection.php';
                                 <div class="submit">
                                     <button type="Submit" id="BtnSave" class=form-button name="BTN" onclick="btnValue('save')" disabled><p>Save</p><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" stroke-width="5" class="button__svg" stroke="currentColor" fill="none"><path d="M51,53.48H10.52V13A2.48,2.48,0,0,1,13,10.52H46.07l7.41,6.4V51A2.48,2.48,0,0,1,51,53.48Z" stroke-linecap="round"/><rect x="21.5" y="10.52" width="21.01" height="15.5" stroke-linecap="round"/><rect x="17.86" y="36.46" width="28.28" height="17.02" stroke-linecap="round"/></svg></button>
                                 </div>
-                                <div class="submit">
+                                <div id="BClear" class="submit">
                                     <button type="button" id="BtnClear" class=form-button onclick="clearPersonal()" disabled><p>Clear</p><svg xmlns="http://www.w3.org/2000/svg" class="button__svg" viewBox="0 0 64 64" stroke-width="5" stroke="currentColor" fill="none"><line x1="8.06" y1="8.06" x2="55.41" y2="55.94"/><line x1="55.94" y1="8.06" x2="8.59" y2="55.94"/></svg></button>
                                 </div>
                             </div>
@@ -1053,6 +1053,7 @@ require '../../php/centralConnection.php';
             getType = 'viewRecord';
             passIDPHP($id);
             isAdmin('$tempsAL');
+            document.getElementById('BClear').style.display = 'none';
                                                 
             </script>";
         }else if($_GET["type"] == "viewArchivedRecord"){
