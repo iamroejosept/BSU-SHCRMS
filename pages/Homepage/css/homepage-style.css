@@ -131,11 +131,21 @@ h1{
   margin-left: 4%;
   margin-right: 8%;
   margin-top: 5%;
-  border: 3px solid white;
+  border: 3px solid transparent;
+  border-image: conic-gradient(
+      from var(--angle),
+      white 0deg 120deg,
+      #fbb300 120deg 240deg,
+      #062102 240deg 360deg
+    )
+    1 stretch;
+  
+    background-color: rgba(41,159,126,0.75);
+  /* border: 3px solid white;
   border-top-color: yellow;
   border-right-color: white;
   border-bottom-color: black;
-  background-color: rgba(41,159,126,0.75);
+  background-color: rgba(41,159,126,0.75); */
 }
 
 #vission{

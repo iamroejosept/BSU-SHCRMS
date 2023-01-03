@@ -188,6 +188,12 @@ require '../../php/centralConnection.php';
                 return ((key >= 65 && key <= 90) || key == 8 || key == 32 || key == 189);
             }
 
+            //This function allows numbers, letters, enye, -
+            function allowLetterNumber(event){
+                var key = event.keyCode;
+                return ((key >= 65 && key <= 90) || (key >= 48 && key <= 57) || (key >= 96 && key <= 105) || key == 8 || key == 32 || key == 189 || key == 165 || key == 164);
+            }
+
             function alphaOnly(event){
                 var key = event.keyCode;
                 return ((key >= 65 && key <= 90) || key == 8 || key == 32);
@@ -871,15 +877,15 @@ require '../../php/centralConnection.php';
                             <div class="Four-Info">
                                     <div class="Lastname">
                                         <label for="TxtLastname">Last Name</label><span id="req">*</span>
-                                        <input type="text" name="TxtLastname" id="TxtLastname" onkeydown="return alphaName(event);" required minlength="2" readonly>
+                                        <input type="text" name="TxtLastname" id="TxtLastname" onkeydown="return allowLetterNumber(event);" required minlength="2" readonly>
                                     </div>
                                     <div class="Firstname">
                                         <label for="TxtFirstname">First Name</label><span id="req">*</span>
-                                        <input type="text" name="TxtFirstname" id="TxtFirstname" onkeydown="return alphaName(event);" required minlength="2" readonly>
+                                        <input type="text" name="TxtFirstname" id="TxtFirstname" onkeydown="return allowLetterNumber(event);" required minlength="2" readonly>
                                     </div>
                                     <div class="Middlename">
                                         <label for="TxtMiddlename">Middle Name</label><span id="req">*</span>
-                                        <input type="text" name="TxtMiddlename" id="TxtMiddlename" onkeydown="return alphaName(event);" required minlength="2" readonly>
+                                        <input type="text" name="TxtMiddlename" id="TxtMiddlename" onkeydown="return allowLetterNumber(event);" required minlength="2" readonly>
                                     </div>
                                     <div class="Extension">
                                         <label for="TxtExtension">Extension Name</label>
