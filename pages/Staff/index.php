@@ -194,31 +194,75 @@ require '../../php/centralConnection.php';
                 var key = event.keyCode;
                 var shift = event.shiftKey;
 
-                if (key == 48)
-                    chara = (shift) ? ")" : "0";
-                if (key == 49)
-                    chara = (shift) ? "!" : "1";
-                if (key == 50)
-                    chara = (shift) ? "@" : "2";
-                if (key == 51)
-                    chara = (shift) ? "#" : "3";
-                if (key == 52)
-                    chara = (shift) ? "$" : "4";
-                if (key == 53)
-                    chara = (shift) ? "%" : "5";
-                if (key == 54)
-                    chara = (shift) ? "^" : "6";
-                if (key == 55)
-                    chara = (shift) ? "&" : "7";
-                if (key == 56)
-                    chara = (shift) ? "*" : "8";
-                if (key == 57)
-                    chara = (shift) ? "(" : "9";
-
-                alert("asd");
-                return chara;
-                /*https://stackoverflow.com/questions/13992111/javascript-function-to-convert-keycodes-into-characters*/
-                /*return ((key >= 65 && key <= 90) || (key >= 48 && key <= 57) || (key >= 96 && key <= 105) || key == 8 || key == 32 || key == 189 || key == 165 || key == 164);*/
+                if (key == 48){
+                    if(shift){
+                        return false;
+                    }else{
+                        return "0";
+                    }
+                }else if(key == 49){
+                    if(shift){
+                        return false;
+                    }else{
+                        return "1";
+                    }
+                }else if(key == 50){
+                    if(shift){
+                        return false;
+                    }else{
+                        return "2";
+                    }
+                }else if(key == 51){
+                    if(shift){
+                        return false;
+                    }else{
+                        return "3";
+                    }
+                }else if(key == 52){
+                    if(shift){
+                        return false;
+                    }else{
+                        return "4";
+                    }
+                }else if(key == 53){
+                    if(shift){
+                        return false;
+                    }else{
+                        return "5";
+                    }
+                }else if(key == 54){
+                    if(shift){
+                        return false;
+                    }else{
+                        return "6";
+                    }
+                }else if(key == 55){
+                    if(shift){
+                        return false;
+                    }else{
+                        return "7";
+                    }
+                }else if(key == 56){
+                    if(shift){
+                        return false;
+                    }else{
+                        return "8";
+                    }
+                }else if(key == 57){
+                    if(shift){
+                        return false;
+                    }else{
+                        return "9";
+                    }
+                }else if(key == 189){
+                    if(shift){
+                        return false;
+                    }else{
+                        return "_";
+                    }
+                }else{
+                    return ((key >= 65 && key <= 90) || (key >= 96 && key <= 105) || key == 18 || key == 8 || key == 32 || key == 165 || key == 164);
+                }
             }
 
             function alphaOnly(event){
