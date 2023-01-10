@@ -1,32 +1,11 @@
-<?php require_once "../php/controllerUserData.php"; ?>
+<?php require_once "../../php/controllerUserData.php"; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Forgot Password</title>
-    <link rel="stylesheet" href="dist/bootstrap.min.css">
-    <link rel="stylesheet" href="../css/style.css">
-    <script type="text/javascript">
-        var act = "";
-           //main function for user activity logging
-            function logAction(userAction){
-                act = userAction;
-                $.ajax({
-                    url:"../php/logAction.php",
-                    method:"POST",
-                    data:jQuery.param({ action: act, isSuccess:"1" }),
-                    dataType: "xml",
-                    success:function(xml){
-
-                    }
-                  })
-            }
-            //called to log sent otp to email upon clicking "submit"
-            function userSendotp(){
-                act = "Sent OTP to email.";
-                logAction(act);
-            }
-    </script>
+    <link rel="stylesheet" href="../../dist/bootstrap.min.css">
+<!--     <link rel="stylesheet" href="../css/style.css"> -->
 </head>
 <body>
     <div class="container">

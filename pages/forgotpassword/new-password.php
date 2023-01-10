@@ -1,13 +1,13 @@
-<?php require_once "../php/controllerUserData.php";
+<?php require_once "../../php/controllerUserData.php";
 
 $isCorrectOTP = false;
 $email = $_SESSION['email'];
 $isCorrectOTP = $_SESSION['isCorrectOTP'];
 
 if($email == false){
-  header('Location: ../index.html');
+  header('Location: ../../index.html');
 }else if($isCorrectOTP == false){
-  header('Location: ../index.html');
+  header('Location: ../../index.html');
 }
 ?>
 <!DOCTYPE html>
@@ -15,8 +15,8 @@ if($email == false){
 <head>
     <meta charset="UTF-8">
     <title>Create a New Password</title>
-    <link rel="stylesheet" href="dist/bootstrap.min.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../../dist/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="style.css"> -->
 </head>
 <body>
     <div class="container">

@@ -626,6 +626,45 @@ require '../../php/centralConnection.php';
                 
             }
 
+            function checkIfNameEqual(){
+                var isNameEqual = false;
+
+                var fName = document.getElementById("TxtFirstname").value;
+                var mName = document.getElementById("TxtMiddlename").value;
+                var lName = document.getElementById("TxtLastname").value;
+
+
+                if ((fName != "" && mName != "") && lName != ""){
+                    if (fName == mName){
+                        isNameEqual = true;
+                    }else if (mName == lName) {
+                        isNameEqual = true;
+                    }else if (lName == fName) {
+                        isNameEqual = true;
+                    }
+
+                    if (isNameEqual == true){
+                        $.alert(
+                            {theme: 'modern',
+                            content:'First, Middle and Last Name should not be equal',
+                            title:'', 
+                            useBootstrap: false,
+                            buttons:{
+                                Ok:{
+                                text:'Ok',
+                                btnClass: 'btn-red'
+                            }}});
+                        $('#TxtFirstname').val('');
+                        $('#TxtMiddlename').val('');
+                        $('#TxtLastname').val('');
+                    }
+                }
+                
+
+                    
+                
+            }
+
            
 
             function saveRecords(form_data)
@@ -877,15 +916,15 @@ require '../../php/centralConnection.php';
                             <div class="Four-Info">
                                     <div class="Lastname">
                                         <label for="TxtLastname">Last Name</label><span id="req">*</span>
-                                        <input type="text" name="TxtLastname" id="TxtLastname" onkeydown="return allowLetterNumber(event);" required minlength="2" readonly>
+                                        <input type="text" name="TxtLastname" id="TxtLastname" onkeydown="return allowLetterNumber(event);" onchange="checkIfNameEqual()" required minlength="2" readonly>
                                     </div>
                                     <div class="Firstname">
                                         <label for="TxtFirstname">First Name</label><span id="req">*</span>
-                                        <input type="text" name="TxtFirstname" id="TxtFirstname" onkeydown="return allowLetterNumber(event);" required minlength="2" readonly>
+                                        <input type="text" name="TxtFirstname" id="TxtFirstname" onkeydown="return allowLetterNumber(event);" onchange="checkIfNameEqual()" required minlength="2" readonly>
                                     </div>
                                     <div class="Middlename">
                                         <label for="TxtMiddlename">Middle Name</label><span id="req">*</span>
-                                        <input type="text" name="TxtMiddlename" id="TxtMiddlename" onkeydown="return allowLetterNumber(event);" required minlength="2" readonly>
+                                        <input type="text" name="TxtMiddlename" id="TxtMiddlename" onkeydown="return allowLetterNumber(event);" onchange="checkIfNameEqual()" required minlength="2" readonly>
                                     </div>
                                     <div class="Extension">
                                         <label for="TxtExtension">Extension Name</label>

@@ -22,6 +22,13 @@ $errors = array();
                     $info = "We've sent a password reset otp to your email - $email";
                     $_SESSION['info'] = $info;
                     $_SESSION['email'] = $email;
+
+                    //For System Logs
+                    $logAction = "INSERT INTO SYSTEMLOGS 
+                                  (action, date) 
+                            VALUES ('User email $email requested OTP code', CURRENT_TIMESTAMP)";
+                    $run_sql = mysqli_query($con, $logAction);
+
                     header('location: reset-code.php');
                     exit();
                 }else{
@@ -48,6 +55,12 @@ $errors = array();
             $info = "Please create a new password that you don't use on any other site.";
             $_SESSION['info'] = $info;
             $_SESSION['isCorrectOTP'] = true;
+
+            //For System Logs
+            $logAction = "INSERT INTO SYSTEMLOGS (action, date) 
+                            VALUES ('User email $email Successfully confirmed OTP code', CURRENT_TIMESTAMP)";
+            $run_sql = mysqli_query($con, $logAction);
+
             header('location: new-password.php');
             exit();
         }else{
@@ -72,6 +85,11 @@ $errors = array();
             if($run_query){
                 $info = "Your password changed. Now you can login with your new password.";
                 $_SESSION['info'] = $info;
+
+                $logAction = "INSERT INTO SYSTEMLOGS (action, date) 
+                            VALUES ('User email $email Successfully changed password', CURRENT_TIMESTAMP)";
+                $run_sql = mysqli_query($con, $logAction);
+
                 header('Location: password-changed.php');
             }else{
                 $errors['db-error'] = "Failed to change your password!";

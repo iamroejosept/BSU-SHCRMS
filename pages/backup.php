@@ -28,8 +28,10 @@
       <a href="userList.php?type=checkRecords" id="nav3" class="nav-pages admin-nav">User List</a>
       <a href="Student/index.php?type=checkRecords" id="nav4" class="nav-pages">Student</a>
       <a href="Consultation/index.php?type=checkRecords" id="nav5" class="nav-pages">Consultation</a>
+
+      <a href="#" onclick="openManual()" id="nav7" class="nav-pages">Help</a>
       
-      <a href="#" id="nav7" onclick="logout()" class="nav-pages">Logout</a>
+      <a href="#" id="nav8" onclick="logout()" class="nav-pages">Logout</a>
     </nav>
 
   <br />
@@ -41,7 +43,7 @@
      <div class="form-group">
       <label for="TxtFileName">Enter filename</label>
       <input type="text" name="TxtFileName" id="TxtFileName" required />
-      <input type="submit" name="submit" id="submit" class="btn btn-info" value="Download" />
+      <input type="submit" name="submit" id="submit" class="btn btn-info" onclick="userCreateBackup()" value="Download" />
      </div>
     </form>
    </div>
@@ -89,6 +91,11 @@
             //called to log user clicking "logs" tab
             function userCheckLogs(){
                 act = "Checked User Activities." 
+                logAction(act);
+            }
+
+            function userCreateBackup(){
+                act = "User made a backup." 
                 logAction(act);
             }
         // ---------------------------end functions for System Logs---------------------------------------

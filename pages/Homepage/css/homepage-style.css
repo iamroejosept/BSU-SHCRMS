@@ -1,3 +1,4 @@
+/* Global Affects all pages */
 *{
   margin: 0px;
   padding: 0px;
@@ -6,100 +7,94 @@
 }
 
 body{
-  overflow: hidden;
+    background: #299F7E;
 }
 
 nav{
-  position: relative;
-  width: 100%;
-  height: 10%;
-  background: #f2eeeb;
-  font-size: 0;
-  box-shadow: 0 2px 3px 0 rgba(0,0,0,.1);
-  margin-bottom: 3%;
+    position: relative;
+    width: 100%;
+    height: 10%;
+    background: #f2eeeb;
+    font-size: 0;
+    box-shadow: 0 2px 3px 0 rgba(0,0,0,.1);
+    margin-bottom: 3%;
 }
 
-nav a, #userFullname, #userPosition{
-  color: #062102;
-  text-decoration: none;
-  position: relative;
-  z-index: 1;
-  display: inline-block;
-  text-align: center;
-  vertical-align: middle; 
-  padding: 1.7% 0 1.5% 0;
-  margin: -0.8% 0 -0.8% 0;
+nav a, #userFullname{
+    color: #062102;
+    text-decoration: none;
+    position: relative;
+    z-index: 1;
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle; 
+    padding: 1.5% 0 1.3% 0;
+    margin: -0.8% 0 -0.8% 0;
 }
 
 .active{
-  background-color: #299F7E; 
-  color: white;
+    background-color: #299F7E; 
+    color: white;
 }
 
 .active:hover{
-  color: white;
-  text-decoration: none;
+    color: white;
+    text-decoration: none;
 }
 
 .nav-pages{
-  font-weight: bold;
+    font-weight: bold;
 }
 
 nav a:not(.active){
-  background-image: linear-gradient(to right,#299F7E,#299F7E 50%,#000 50%);
-  background-size: 200% 100%;
-  background-position: -100%;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  transition: all 0.3s ease-in-out;
+    background-image: linear-gradient(to right,#299F7E,#299F7E 50%,#000 50%);
+    background-size: 200% 100%;
+    background-position: -100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: all 0.3s ease-in-out;
 }
 
 nav a:before {
-  content: '';
-  background: white;
-  display: block;
-  position: absolute;
-  bottom: -3px;
-  left: 0;
-  width: 0;
-  height: 3px;
-  transition: all 0.3s ease-in-out;
+    content: '';
+    background: white;
+    display: block;
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 0;
+    height: 3px;
+    transition: all 0.3s ease-in-out;
 }
 
-#nav1:before{
-  content: '';
-  background: white;
-  display: block;
-  position: absolute;
-  bottom: -3px;
-  left: 0;
-  width: 0;
-  height: 3px;
-  transition: all 0.4s ease-in-out;
+nav a:hover:not(.active) {
+    background-position: 0;
 }
-
-/*nav a:hover:not(.active) {
-  background-position: 0;
-}*/
 
 nav a:hover:not(.active)::before {
-  width: 100%;
+    width: 100%;
 }
 
-#userFullname, #userPosition{
-  text-align:left;
-  width: 49%;
-  margin-left: 1%;
-  margin-top: 0.05%;
-  margin-bottom: 0.05%;
-}
+#userFullname{
+    text-align:left;
+    width: 49%;
+    margin-left: 1%;
+    margin-top: 0.05%;
+    margin-bottom: 0.05%;
+  }
 
 nav a:nth-child(5){
-  width: 10%;
-}
+    width: 10%;
+  }
+  
+  nav a:nth-child(2), nav a:nth-child(3), nav a:nth-child(4), nav a:nth-child(6), nav a:nth-child(7){
+    width: 7%;
+  }
 
-nav a:nth-child(2), nav a:nth-child(3), nav a:nth-child(4), nav a:nth-child(6), nav a:nth-child(7){
-  width: 7%;
+
+/* ----Homepage CSS only----- */
+body{
+  overflow: hidden;
 }
 
 body{
@@ -371,3 +366,13 @@ nav a, #userFullname, nav div{
 
 /* Change the background color of the dropdown button when the dropdown content is shown 
 .dropdown:hover .dropbtn {background-color: black;}*/
+
+/* ----end of Homepage CSS---- */
+
+
+
+
+
+
+
+

@@ -1,4 +1,4 @@
-<?php require_once "../php/controllerUserData.php"; ?>
+<?php require_once "../../php/controllerUserData.php"; ?>
 <?php
 if($_SESSION['info'] == false){
     header('Location: login-user.php');  
@@ -9,8 +9,8 @@ if($_SESSION['info'] == false){
 <head>
     <meta charset="UTF-8">
     <title>Login Form</title>
-    <link rel="stylesheet" href="dist/bootstrap.min.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../../dist/bootstrap.min.css">
+<!--     <link rel="stylesheet" href="style.css"> -->
 </head>
 <body>
     <div class="container">
@@ -26,7 +26,7 @@ if($_SESSION['info'] == false){
             }
             session_destroy();
             ?>
-                <form action="../index.html" method="POST">
+                <form action="../../index.html" method="POST">
                     <div class="form-group">
                         <input class="form-control button" type="submit" name="login-now" value="Login Now">
                     </div>

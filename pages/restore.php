@@ -21,6 +21,53 @@
   <script src="../dist/html2pdf.bundle.min.js"></script> 
   <script>
     var globalAL = "";
+
+    // ---------------------------start functions for System Logs---------------------------------------
+            var act = "";
+
+            //function called when logout tab pressed
+            function logout(){
+                act = "Logged out";
+                logAction(act);
+                /*alert("logs success");*/
+                  $.ajax({
+                    url:"../php/logout.php",
+                    method:"POST",
+                    data:"",
+                    success:function(xml){
+                        sessionStorage.clear();
+                        setTimeout(function(){
+                            window.location.href = '../index.html';
+                        }, 100);
+                    }
+                  })
+            }
+
+            //main function for user activity logging
+            function logAction(userAction){
+                act = userAction;
+                $.ajax({
+                    url:"../php/logAction.php",
+                    method:"POST",
+                    data:jQuery.param({ action: act, isSuccess:"1" }),
+                    dataType: "xml",
+                    success:function(xml){
+
+                    }
+                  })
+            }
+
+            //called to log user clicking "logs" tab
+            function userCheckLogs(){
+                act = "Checked User Activities." 
+                logAction(act);
+            }
+
+            function userRestore(){
+                act = "User Restored from a Backup." 
+                logAction(act);
+            }
+        // ---------------------------end functions for System Logs---------------------------------------
     
     function openManual(){
                 if(globalAL == "admin"){
@@ -69,7 +116,7 @@
     <p><label>Select Sql File</label>
     <input type="file" name="database" /></p>
     <br />
-    <input type="submit" name="import" class="btn btn-info" value="Upload" /><br><br>
+    <input type="submit" name="import" class="btn btn-info" onclick="userRestore()" value="Upload" /><br><br>
    </form>
   </div>  
  </body>  
