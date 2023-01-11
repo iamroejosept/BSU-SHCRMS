@@ -36,6 +36,8 @@ nav a, #userFullname{
 .active{
     background-color: #299F7E; 
     color: white;
+    border-top: 1px solid #299F7E;
+    border-bottom: 1px solid #299F7E;
 }
 
 .active:hover{
@@ -339,6 +341,7 @@ nav a, #userFullname, nav div{
   
   .dropA{
     padding: 0 6.25vw 0 1vw;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.438);
   }
 
   .dropdown-content a:nth-child(2), .dropdown-content a:nth-child(3), .dropdown-content a:nth-child(4), .dropdown-content a:nth-child(5), .dropdown-content a:nth-child(6), .dropdown-content a:nth-child(7){

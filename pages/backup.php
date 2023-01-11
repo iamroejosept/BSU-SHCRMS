@@ -20,18 +20,7 @@
  </head>
  <body>
     <nav>
-      <span id="userFullname"><b><?php echo ucwords($_SESSION['homePosDisp']) . " ";
-      $tempNAME = strtolower($_SESSION['fullname']);
-      echo ucwords($tempNAME); 
-      ?></b></span>
-      <a href="Homepage/index.php" id="nav2" class="nav-pages active">Home</a>
-      <a href="userList.php?type=checkRecords" id="nav3" class="nav-pages admin-nav">User List</a>
-      <a href="Student/index.php?type=checkRecords" id="nav4" class="nav-pages">Student</a>
-      <a href="Consultation/index.php?type=checkRecords" id="nav5" class="nav-pages">Consultation</a>
-
-      <a href="#" onclick="openManual()" id="nav7" class="nav-pages">Help</a>
-      
-      <a href="#" id="nav8" onclick="logout()" class="nav-pages">Logout</a>
+        <a href="javascript:history.back()" id="back" class="nav-pages">Go Back</a>    
     </nav>
 
   <br />

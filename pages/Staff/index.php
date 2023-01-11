@@ -704,6 +704,10 @@ require '../../php/centralConnection.php';
                 var mName = document.getElementById("TxtMiddlename").value;
                 var lName = document.getElementById("TxtLastname").value;
 
+                //lowercase the names
+                fName = fName.toLowerCase();
+                mName = mName.toLowerCase();
+                lName = lName.toLowerCase();
 
                 if ((fName != "" && mName != "") && lName != ""){
                     if (fName == mName){

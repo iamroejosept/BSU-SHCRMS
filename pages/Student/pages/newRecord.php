@@ -644,8 +644,79 @@ if(empty($_SESSION['logged_in'])){
 
             //This function allows numbers, letters, enye, -
             function allowLetterNumber(event){
+                var chara = "";
                 var key = event.keyCode;
-                return ((key >= 65 && key <= 90) || (key >= 48 && key <= 57) || (key >= 96 && key <= 105) || key == 8 || key == 32 || key == 189 || key == 165 || key == 164);
+                var shift = event.shiftKey;
+
+                if (key == 48){
+                    if(shift){
+                        return false;
+                    }else{
+                        return "0";
+                    }
+                }else if(key == 49){
+                    if(shift){
+                        return false;
+                    }else{
+                        return "1";
+                    }
+                }else if(key == 50){
+                    if(shift){
+                        return false;
+                    }else{
+                        return "2";
+                    }
+                }else if(key == 51){
+                    if(shift){
+                        return false;
+                    }else{
+                        return "3";
+                    }
+                }else if(key == 52){
+                    if(shift){
+                        return false;
+                    }else{
+                        return "4";
+                    }
+                }else if(key == 53){
+                    if(shift){
+                        return false;
+                    }else{
+                        return "5";
+                    }
+                }else if(key == 54){
+                    if(shift){
+                        return false;
+                    }else{
+                        return "6";
+                    }
+                }else if(key == 55){
+                    if(shift){
+                        return false;
+                    }else{
+                        return "7";
+                    }
+                }else if(key == 56){
+                    if(shift){
+                        return false;
+                    }else{
+                        return "8";
+                    }
+                }else if(key == 57){
+                    if(shift){
+                        return false;
+                    }else{
+                        return "9";
+                    }
+                }else if(key == 189){
+                    if(shift){
+                        return false;
+                    }else{
+                        return "_";
+                    }
+                }else{
+                    return ((key >= 65 && key <= 90) || (key >= 96 && key <= 105) || key == 18 || key == 8 || key == 32 || key == 165 || key == 164);
+                }
             }
 
             function alphaOnly(event){
@@ -1456,6 +1527,10 @@ if(empty($_SESSION['logged_in'])){
                 var mName = document.getElementById("TxtMiddlename").value;
                 var lName = document.getElementById("TxtLastname").value;
 
+                //lowercase the names
+                fName = fName.toLowerCase();
+                mName = mName.toLowerCase();
+                lName = lName.toLowerCase();
 
                 if ((fName != "" && mName != "") && lName != ""){
                     if (fName == mName){

@@ -81,30 +81,7 @@
  </head>  
  <body>  
     <nav>
-      <span id="userFullname"><b><?php echo ucwords($_SESSION['homePosDisp']) . " ";
-      $tempNAME = strtolower($_SESSION['fullname']);
-      echo ucwords($tempNAME); 
-      ?></b></span>
-      <a href="Homepage/index.php" id="nav2" class="nav-pages">Home</a>
-      <a href="userList.php?type=checkRecords" id="nav3" class="nav-pages admin-nav">User List</a>
-      <a href="Student/index.php?type=checkRecords" id="nav4" class="nav-pages">Student</a>
-      <a href="Consultation/index.php?type=checkRecords" id="nav5" class="nav-pages">Consultation</a>
-      
-      <div class="dropdown nav-pages admin-nav" id="nav6">
-          <button class="dropbtn active">Maintenance</button>
-                <div class="dropdown-content">
-                    <a class="dropA" href="logs.php?type=checkRecords" onclick="userCheckLogs()">Logs</a>
-                    <a class="dropA" href="Student/index.php?type=checkArchivedStudent">Archived Student Records</a>
-                    <a class="dropA" href="Consultation/index.php?type=checkArchivedConsultation">Archived Consultation Records</a>
-                    <a class="dropA" href="userList.php?type=checkArchivedStaff">Archived Staff Accounts</a>
-                    <a class="dropA" href="logs.php?type=checkArchivedLogs">Archived System Logs</a>
-                    
-                    <a class="dropA" href="backup.php">Backup</a>
-                    <a class="dropA" href="#">Restore</a>
-                </div>
-      </div>
-      <a href="#" onclick="openManual()" id="nav8" class="nav-pages">Help</a>
-      <a href="#" id="nav7" onclick="logout()" class="nav-pages">Logout</a>
+        <a href="javascript:history.back()" id="back" class="nav-pages">Go Back</a> 
     </nav> 
   <br /><br />  
   <div class="container" style="width:700px;">  

@@ -19,7 +19,7 @@ nav{
   margin-bottom: 3%;
 }
 
-nav a, #userFullname, #userPosition{
+nav a, #userFullname, #userPosition, #back{
   color: #062102;
   text-decoration: none;
   position: relative;
@@ -89,6 +89,14 @@ nav a:hover:not(.active)::before {
 #userFullname, #userPosition{
   text-align:left;
   width: 49%;
+  margin-left: 1%;
+  margin-top: 0.05%;
+  margin-bottom: 0.05%;
+}
+
+#back{
+  text-align:left;
+  width: 5.5%;
   margin-left: 1%;
   margin-top: 0.05%;
   margin-bottom: 0.05%;
