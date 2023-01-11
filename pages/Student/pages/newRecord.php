@@ -87,6 +87,7 @@ if(empty($_SESSION['logged_in'])){
             var act = "";
             var getType ="";
             var globalAL = "";
+            var imgSrc = "";
 
             async function clickedPDF(){
                 const element = document.getElementById('toDownloadPDF');
@@ -2374,8 +2375,10 @@ if(empty($_SESSION['logged_in'])){
                                         document.getElementById("IDPic").src = "../images/id picture.png";
                                     }else{
                                         document.getElementById("IDPic").src = StudentImage;
+                                        imgSrc = StudentImage;
                                     }
                                     $('#TxtStudentIDNumber').val(StudentIDNumber);
+
                                     if(StudentCategory == "elementary"){
                                         document.getElementById("highschool").removeAttribute("selected");
                                         document.getElementById("senior").removeAttribute("selected");
@@ -2897,10 +2900,30 @@ if(empty($_SESSION['logged_in'])){
                 });
             }
 
-            function LoadImage(event){
+            function LoadImage(input){
                 var tmppath = (window.URL || window.webkitURL).createObjectURL(event.target.files[0]);
                 var img = document.getElementById("IDPic");
-                img.src = tmppath;
+
+                //test if file size is greater than 1 MB
+                var fileSize = input.files[0].size / 1024 / 1024;
+                if (fileSize > 1) {
+                    //alerts user if filesize is more than 1 MB
+                    $.alert(
+                        {theme: 'modern',
+                        content: "Filesize must not exceed 1 MB.",
+                        title:'', 
+                        buttons:{
+                            Ok:{
+                            text:'Ok',
+                            btnClass: 'btn-red'
+                        }}});
+                    document.getElementById("IDPic").src = "../images/id picture.png";
+                    $('#TxtStudentImage').val('');
+                }else{
+                    //loads image
+                    img.src = tmppath;
+                }
+                
             }
 
             function changeCSS(){
@@ -3299,7 +3322,7 @@ if(empty($_SESSION['logged_in'])){
                                 </div>
                                 <div class="StudentImage">
                                     <label for="TxtStudentImage">Student Image</label><br>
-                                    <input name="TxtStudentImage" onchange="LoadImage(event);" accept="Image/*" type="file" id="TxtStudentImage" disabled>
+                                    <input name="TxtStudentImage" onchange="LoadImage(this);" accept="Image/*" type="file" id="TxtStudentImage" disabled>
                                 </div>
                             </div>
                             <div class="Two-Info">

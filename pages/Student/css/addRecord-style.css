@@ -596,6 +596,6 @@ nav a, #userFullname, nav div{
     height: 6vw;
   }
 
-  .StudentImage label, .StudentImage input {
+  /*.StudentImage label, .StudentImage input {
     display: none;
-  }
+  }*/
